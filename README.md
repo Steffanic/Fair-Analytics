@@ -12,5 +12,5 @@ Next steps will be distilling the features from all the years into a cohesive re
 It is becoming clear that we will need to compute general features accross different years. We need to standardize!
 
 |  COMMON FEATURE  |  YEAR RANGE  |  FEATURE NAME  |
-|------------------|-------------------------------|
+| ---------------- | ----------------------------- |
 | STARTING BALANCE |  2001-2003   |  BEGINNING RESOURCES  |
