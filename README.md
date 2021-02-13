@@ -9,7 +9,7 @@ From year to year the content and organization of the STOP reports changes.
 
 Next steps will be distilling the features from all the years into a cohesive representation of a fair.
 
-It is becoming clear that we will need to compute general features accross different years. We need to standardize!
+It is becoming clear that we will need to compute general features across different years. We need to standardize!
 
 ## Feature Map
 This table describes the relationship between the features that will be considered for modeling and the rows of each CSV accross the years.
