@@ -62,3 +62,30 @@ This table describes the CSV columns that we are removing due to lack of informa
 |------------------------|-------------------|
 |  2001,-15,-16,-17,-18  |  Horse Racing     |
 |  2014,-15,-16,-17,-18  |  Carnivals
+
+
+
+## Manual Edits that need to be done in cleaning data
+
+2001 - Class 2 row 4 col BD "Remove note"
+2002 - Class 4 row 4 col BO "Remove note"
+2003 - Class 2 row 15 col BL "Remove note"
+     - Class 3 row 11, 15, 17 col BP "Remove note"
+     - Class 5 row 7 col BV "Remove note"
+2004 - Class 4 row 10 "Remove row"
+2005 - Class 2 row 21 "Remove row"
+     - Class 5 row 4 "Remove row"
+2006 - Class 2 row 21 "Remove row"
+2007 - Class 3 row 19 "Remove row"
+2012 - Class 1 row 12 "Remove row"
+     - Class 2 row 10 "Remove row"
+     - Class 3 row 7 "Remove row"
+     - Class 3+ row 15 "Remove row"
+2013 - Class 1 row 12 "Remove row"
+     - Class 2 row 11 "Remove row"
+     - Class 3 row 7 "Remove row"
+     - Class 3+ row 15 "Remove row"
+2014 - Class 1 row 12 "Remove row"
+     - Class 2 row 11 "Remove row"
+     - Class 3 row 7 "Remove row"
+     - Class 3+ row 15 "Remove row"

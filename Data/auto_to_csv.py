@@ -7,18 +7,7 @@ Purpose: The strategy here is to open each year's STOP report and format each cl
 
 from openpyxl import load_workbook
 
-STOP_2001 = load_workbook(filename="2001 STOP Summary.xlsx", data_only=True) # Load up the 2001 workbook and use the values calculated from the last time the workbook was opened(Rather than maintaining the formulas within each cell.)
-
-
-Class_1 = STOP_2001["Class 1"] # Grab the first class of fairs
-
-for row in range(1,50): # Cycle through the first fair to ensure that there are no Nones ^^This is a great place for input validation post-mvp^^
-    if (Class_1[f'C{row}'].value != None):
-        print(Class_1[f'C{row}'])
-
-
-Class_1_csv = STOP_2001.create_sheet("Class 1 csv") # Create a new sheet that will hold that properly formatted Class 1 data
-
+DEBUGLVL=0
 
 def yield_excel_cols(cond_col):
     '''
@@ -41,30 +30,58 @@ def yield_excel_cols(cond_col):
     
     return new_col
 
-def format_fair_to_new_sheet(col_label, new_row):
+def format_fair_to_new_sheet(col_label, new_row, Cur_Class, Cur_Class_FSheet):
     cond_col = "A" # we always start at column A
     for row in range(1,200): # This iterates through the rows of the given fair 
-        if (Class_1[f'{col_label}{row}'].value != None and row!=49): # This checks if the row is empty or if it is the secondary name row
-            print("row ", row, " : ", Class_1[f'{col_label}{row}'].value) # Print out the values for visual validation
-            Class_1_csv[f"{cond_col}{new_row}"] = Class_1[f'{col_label}{row}'].value # Assign the appropriate row value to the appropriate column within the new sheet
+        if (Cur_Class[f'{col_label}{row}'].value != None or Cur_Class[f'{yield_excel_cols(yield_excel_cols(col_label))}{row}'].value != None or Cur_Class[f'{yield_excel_cols(yield_excel_cols(yield_excel_cols(col_label)))}{row}'].value != None or Cur_Class[f'{yield_excel_cols(yield_excel_cols(yield_excel_cols(yield_excel_cols(col_label))))}{row}'].value != None or Cur_Class[f'{"C" if chr(ord(col_label)-1)=="B" else chr(ord(col_label)-1)}{row}'].value != None or Cur_Class[f'{"C" if (chr(ord(col_label)-1)=="B" or chr(ord(col_label)-2)=="B" or chr(ord(col_label)-3)=="B") else chr(ord(col_label)-3)}{row}'].value != None): # This checks if the row is empty
+            if (row>10 and (0 if type(Cur_Class[f'{col_label}{row}'].value)!=str else (Cur_Class[f'{col_label}{row}'].value[:10]==Cur_Class[f'{col_label}{2}'].value[:10]))): # or if it is the secondary name row
+                continue
+            Cur_Class_FSheet[f"{cond_col}{new_row}"] = Cur_Class[f'{col_label}{row}'].value # Assign the appropriate row value to the appropriate column within the new sheet
             cond_col = yield_excel_cols(cond_col) # Advance the column cursor
 
-def format_feature_labels():
+def format_feature_labels(Cur_Class, Cur_Class_FSheet):
     cond_col="A"
     for row in range(1,200): # We iterate through all the rows to extract the appropriate feature names
-        if (Class_1[f'C{row}'].value != None and row!=49):
-            Class_1_csv[f"{cond_col}1"] = Class_1[f"A{row}"].value if Class_1[f"A{row}"].value != None else Class_1[f"B{row}"].value
+        if (not all(v is None for v in [Cur_Class[f'{chr(ord("C")+x)}{row}'].value for x in range(8)])):
+            if (row>10 and (Cur_Class[f'C{row}'].value==Cur_Class[f'C{2}'].value)): # or if it is the secondary name row
+                continue
+            Cur_Class_FSheet[f"{cond_col}1"] = Cur_Class[f"A{row}"].value if Cur_Class[f"A{row}"].value != None else Cur_Class[f"B{row}"].value
             cond_col = yield_excel_cols(cond_col)
-    Class_1_csv["A1"] = "Fair Name"
+    Cur_Class_FSheet["A1"] = "Fair Name"
 
-format_feature_labels()
-col = "C"
-for row in range(2,30):
-    if Class_1[f"{col}2"].value == None:
-        break
-    format_fair_to_new_sheet(col, row)
-    col = yield_excel_cols(col)
+def format_workbook(year):
 
+    print(f"Processing year {year}")
 
-STOP_2001.save('2001 STOP Summary.xlsx') # Better save if we want to see our changes
+    STOP = load_workbook(filename=f"{year} STOP Summary.xlsx", data_only=True) # Load up the year workbook and use the values calculated from the last time the workbook was opened(Rather than maintaining the formulas within each cell.)
 
+    classes = list(range(1, 8))
+    if int(year)>=2009:
+        classes.append("3+")
+        classes.append("4+")
+
+    for class_num in classes:
+
+        print(f"Formatting class {class_num}")
+        
+        Cur_Class = STOP[f"Class {class_num}"]
+
+        Cur_Class_FSheet = STOP.create_sheet(f"Class {class_num} Formatted")
+
+        format_feature_labels(Cur_Class, Cur_Class_FSheet)
+
+        col = "C"
+        for row in range(2,30):
+            if Cur_Class[f"{col}2"].value == None:
+                if DEBUGLVL==1:
+                    print(f"Finished on column {col}")
+                break
+            format_fair_to_new_sheet(col, row, Cur_Class, Cur_Class_FSheet)
+            col = yield_excel_cols(col)
+
+    STOP.save(f'{year} STOP Summary.xlsx') # Better save if we want to see our changes
+
+for year in range(2001, 2019):
+    if year == 2011:
+        continue
+    format_workbook(year)
