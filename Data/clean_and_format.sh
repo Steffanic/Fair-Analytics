@@ -1,0 +1,2 @@
+python3 clean_workbooks.py
+python3 auto_to_csv.py
