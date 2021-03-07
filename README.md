@@ -67,85 +67,167 @@ This table describes the CSV columns that we are removing due to lack of informa
 
 ## Manual Edits that need to be done in cleaning data
 
+
 2001 
+
 - Class 3 row 4 col BD "Remove note"
+
 2002 
+
 - Class 4 row 4 col BO "Remove note"
+
 2003 
+
 - Class 5 row 7 col BV "Remove note"
+
 2004 
+
 - Class 4 row 10 "Remove row"
+
 2005 
+
 - Class 2 row 21 "Remove row"
+
 - Class 5 row 4 "Remove row"
+
 2006 
+
 - Class 2 row 21 "Remove row"
+
 - Class 7 row 5 "Remove row"
+
 2007 
+
 - Class 3 row 19 "Remove row"
+
 2012 
+
 - Class 1 row 12 "Remove row"
+
 - Class 2 row 10 "Remove row"
+
 - Class 3 row 7 "Remove row"
+
 - Class 3+ row 15 "Remove row"
+
 2013 
+
 - Class 1 row 12 "Remove row"
+
 - Class 2 row 11 "Remove row"
+
 - Class 3+ row 15 "Remove row"
+
 2014 
+
 - Class 1 row 7,12 "Remove row"
+
 - Class 3 row 6 "Remove row"
+
 - Class 5 row 4 "Remove row"
+
 - Class 1 col AZ,BA,CH "Remove column"
+
 - Class 2 col BB,CF "Remove column"
+
 - Class 3 col BD,BE,CL "Remove column"
+
 - Class 4 col BD,BE,CL "Remove column"
+
 - Class 5 col BA,BB,CG "Remove column"
+
 - Class 6 col BC,BD,CI "Remove column"
+
 - Class 7 col BB,BC,CG "Remove column"
+
 - Class 3+ col BD,CH "Remove column"
+
 - Class 4+ col BC,BD,CI "Remove column"
+
 2015 
+
 - Class 1 col BE,BF,CK "Remove column"
+
 - Class 2 col BD,BE,CJ "Remove column"
+
 - Class 3 col BD,BE,CJ "Remove column"
+
 - Class 4 col BD,BE,CJ,CK "Remove column"
+
 - Class 5 col BE,BF,CL "Remove column"
+
 - Class 6 col BE,BF,CL "Remove column"
+
 - Class 7 col BE,BF,CL "Remove column"
+
 - Class 3+ col BD,BE,CJ "Remove column"
+
 - Class 4+ col BE,BF,CL "Remove column"
+
 2016 
+
 - Class 3 row 6 "Remove row"
+
 - Class 1 col BF,BG,CR "Remove column"
+
 - Class 2 col BF,BG,CQ "Remove column"
+
 - Class 3 col BF,BG,CR "Remove column"
+
 - Class 4 col BF,BG,CQ,CR "Remove column"
+
 - Class 5 col BG,BH,CT "Remove column"
+
 - Class 6 col BG,BH,CT "Remove column"
+
 - Class 7 col BH,BI,CU "Remove column"
+
 - Class 3+ col BF,BG,CR "Remove column"
+
 - Class 4+ col B,BG,BH,CT "Remove column"
+
 2017 
+
 - Class 1 col BG,BH,CS "Remove column"
+
 - Class 2 col BG,BH,CS "Remove column"
+
 - Class 3 col BG,BH,CS "Remove column"
+
 - Class 4 col BG,BH,CS,CT "Remove column"
+
 - Class 5 col BG,BH,CS "Remove column"
+
 - Class 6 col BG,BH,CS "Remove column"
+
 - Class 7 col BH,BI,CT "Remove column"
+
 - Class 3+ col BG,BH,CS "Remove column"
+
 - Class 4+ col BG,BH,CT "Remove column"
+
 2018 
+
 - Class 3 row 6 "Remove row"
+
 - Class 7 row 6 "Remove row"
+
 - Class 4+ row 2 "Remove row"
+
 - Class 1 col BJ,BK,CW "Remove column"
+
 - Class 2 col BJ,BK,CW "Remove column"
+
 - Class 3 col BJ,BK,CW "Remove column"
+
 - Class 4 col BJ,BK,CW,CX "Remove column"
+
 - Class 5 col BK,BL,CY "Remove column"
+
 - Class 6 col BK,BL,CY "Remove column"
+
 - Class 7 col BL,BM,CZ "Remove column"
+
 - Class 3+ col BJ,BK,CW "Remove column"
+
 - Class 4+ col B,BK,BL,CY "Remove column"
