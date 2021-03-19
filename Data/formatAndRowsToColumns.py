@@ -92,8 +92,8 @@ def format_workbook(year):
     # Better save if we want to see our changes
     STOP.save(f'{year} STOP Summary.xlsx')
 
-
 for year in range(2001, 2019):
     if year == 2011:
         continue
     format_workbook(year)
+
