@@ -58,7 +58,14 @@ This table describes the relationship between the features that will be consider
 | EXPENDITURES: PRIOR YEAR EXPENSE ADJUSTMENT          |  2001-2018   |  Prior Year Expense Adjustment               |
 | EXPENDITURES: CASH (OVER/UNDER)                      |  2001-2018   |  Cash (Over/Under)                           |
 | EXPENDITURES: CAPITAL EXPENDITURES FUNDED BY FAIR    |  2001-2003   |  Capital Expenditures Funded by Fair         |
-|                                                      |  2004-2018   |  Ask Dad.
+|                                                      |  2004-2018   |  Ask Dad.                                    |
+| EXPENDITURES: OTHER ADDITION/(REDUCTION) IN RESOURCES|  2001-2005   |  Other Addition/(Reduction) in Resources     |
+|                                                      |  2006        |  MISSING                                     |
+|                                                      |  2007-2015   |  Other Addition/(Reduction) in Resources     |
+|                                                      |  2016-2018   |  MISSING                                     |
+
+
+
 
 
 
